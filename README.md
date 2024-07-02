@@ -37,10 +37,9 @@
    npm install
    ```
 
-3. Install dependensi frontend:
+3. Install nodemon ( globaly ):
    ```bash
-   cd ../frontend
-   npm install
+   npm install -g nodemon
    ```
 
 ## Variabel Lingkungan
