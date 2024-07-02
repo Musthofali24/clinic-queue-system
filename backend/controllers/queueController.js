@@ -1,6 +1,26 @@
 const Queue = require("../models/Queue");
 const Clinic = require("../models/Clinic");
 
+exports.getAllQueues = async (req, res) => {
+  try {
+    const queues = await Queue.find();
+    const clinics = await Clinic.find();
+
+    const activeQueues = queues.map(queue => {
+      const clinic = clinics.find(clinic => clinic.code === queue.clinicCode);
+      return {
+        clinicCode: queue.clinicCode,
+        number: queue.number,
+        clinicName: clinic ? clinic.name : 'Unknown Clinic'
+      };
+    });
+
+    res.json(activeQueues);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 exports.getQueue = async (req, res) => {
   const { clinicCode } = req.params;
   try {
