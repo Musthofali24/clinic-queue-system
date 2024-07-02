@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link href="../assets/css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Register</h1>
+    <form id="registerForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required /><br />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required /><br />
+      <label for="role">Role:</label>
+      <select id="role" name="role">
+        <option value="admin">Admin</option>
+        <option value="staff">Staff</option></select
+      ><br />
+      <label for="clinicCode">Clinic Code (for staff only):</label>
+      <input type="text" id="clinicCode" name="clinicCode" /><br />
+      <button type="submit">Register</button>
+    </form>
+    <script src="../assets/js/queue.js"></script>
+  </body>
+</html>
